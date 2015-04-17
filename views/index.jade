@@ -1,0 +1,16 @@
+extends layout
+block content
+
+  h1.title 音乐播放器
+    input#volume(type="range" , min='0' , max='100' , value='60')
+    ul.changetype
+      li(data-type='dot') Dot
+      li(data-type='column').selected Column
+  .wrapper
+    .menu
+      if muscis != null
+        ul.music-list
+          each music in muscis
+            li(title='#{music}')=music
+    .music-center#box
+  script(type="text/javascript", src="/javascripts/index.js")
